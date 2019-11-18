@@ -161,10 +161,6 @@ class Pool extends EventEmitter
             return null;
         }
 
-        if (count($this->workers) + $this->startingProcesses < $this->options[Options::MIN_SIZE]) {
-            return $this->spawn();
-        }
-
         if (count($this->workers) + $this->startingProcesses < $this->options[Options::MAX_SIZE]) {
             return $this->spawn();
         }
